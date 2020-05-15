@@ -2,7 +2,7 @@
 JavaScript functions for conversion between binary, decimal, and hex. Can handle both signed and unsigned binary and hexadecimal numbers.
 
 ## Functions
-###**decToBinary(dec, signed)**
+### **decToBinary(dec, signed)**
 Converts decimal number to binary string.
 **Parameters**
 -dec: base 10 number to be converted to binary
@@ -10,7 +10,7 @@ Converts decimal number to binary string.
 **Returns**
 -string representing binary number of decimal provided. Signed or unsigned depending on signed parameter value.
 
-###**decToHex(dec, signed)**
+### **decToHex(dec, signed)**
 Converts decimal number to hexadecimal string.
 **Parameters**
 -dec: base 10 number to be converted to hexadecimal
@@ -18,7 +18,7 @@ Converts decimal number to hexadecimal string.
 **Returns**
 -string representing hexadecimal number of decimal provided. Signed or unsigned depending on signed parameter value.
 
-###**binToDec(bin, signed)**
+### **binToDec(bin, signed)**
 Converts binary string to decimal number.
 **Parameters**
 -bin: binary string to be converted to base 10
@@ -26,21 +26,21 @@ Converts binary string to decimal number.
 **Returns**
 -deciaml conversion of binary string provided
 
-###**binToDHex(bin)**
+### **binToDHex(bin)**
 Converts binary string to hexadecimal string.
 **Parameters**
 -bin: binary string to be converted to hexadecimal string.
 **Returns**
 -hexidecimal string conversion of the binary string.
 
-###**hexToBin(hex)**
+### **hexToBin(hex)**
 Converts hexadecimal string to binary string.
 **Parameters**
 -hex: hexadecimal string to be converted to binary string.
 **Returns**
 -hexidecimal string conversion of the binary string.
 
-###**hexToDec(hex, signed)**
+### **hexToDec(hex, signed)**
 Converts hexadecimal string to decimal number.
 **Parameters**
 -hex: hexadecimal string to be converted to base 10
@@ -48,7 +48,7 @@ Converts hexadecimal string to decimal number.
 **Returns**
 -decimal number represented by hexadecimal string. Signed or unsigned depending on signed parameter value.
 
-###**binSignExtend(bin, bits)**
+### **binSignExtend(bin, bits)**
 Extends binary string by repeating the leading bit.
 **Parameters**
 -bin: binary string to be sign extended.
@@ -56,7 +56,7 @@ Extends binary string by repeating the leading bit.
 **Returns**
 -sign extended binary string of binary string provided to a length of bits parameter.
 
-###**hexSignExtend(hex, bits)**
+### **hexSignExtend(hex, bits)**
 Extends hexadecimal string by repeating the leading bit
 **Parameters**
 -hex: hexadecimal string to be sign extended.
