@@ -155,7 +155,7 @@ function hexSignExtend(hex, bits) {
 		bits = 4;
 	}
 	//Extend for negative or positive respectively
-	if (hex[0] == "F") {
+	if (parseInt(hex[0], 16) >= 8) {
 		for (var i = 0; i < bits-hex.length; i++) {
 				temp += "F";
 		}
