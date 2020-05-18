@@ -44,7 +44,7 @@ function decToHex(number, signed) {
 			var temp = number.toString(16);
 
 			for (var i = 0; i < temp.length; i++) {
-				hex += (16 - parseInt(temp[i], 16)).toString(16);
+				hex += (15 - parseInt(temp[i], 16)).toString(16);
 			}
 			while (hex.length < 4) {
 				hex = "F" + hex;
@@ -98,8 +98,10 @@ function binToHex(bin) {
 function hexToBin(hex) {
 	var bin = "";
 	for (var i = 0; i < hex.length; i++) {
-		var temp = parseInt(hex[i], 16).toString(2);
-		temp = binSignExtend(temp, 4);
+		var temp = hexToDec(hex[i], false).toString(2);
+		while (temp.length < 4) {
+			temp = "0" + temp;
+		}
 
 		bin += temp;
 	}
@@ -117,9 +119,9 @@ function hexToDec(hex, signed) {
 		} else {
 			var temp = "";
 			for (var i = 0; i < hex.length; i++) {
-				temp = temp + (16-parseInt(hex[i], 16)).toString(16);
+				temp = temp + (15-parseInt(hex[i], 16)).toString(16);
 			}
-			return (parseInt(temp)+1) * -1;
+			return (parseInt(temp, 16)) * -1;
 		}
 	} else {
 		return parseInt(hex, 16);
@@ -135,13 +137,13 @@ function binSignExtend(bin, bits) {
 	//if leading bit is 1, extend 1s until bits length
 	if (bin[0] == "1") {
 		for (var i = 0; i < bits-bin.length; i++) {
-			tempBin += "1";
+			tempBin = tempBin + "1";
 		}
 		tempBin += bin;
 	//if leading bit is 0, extend 0s until bits length
 	} else {
 		for (var i = 0; i < bits-bin.length; i++) {
-			tempBin += "0";
+			tempBin = tempBin + "0";
 		}
 		tempBin += bin;
 	}
@@ -157,11 +159,11 @@ function hexSignExtend(hex, bits) {
 	//Extend for negative or positive respectively
 	if (parseInt(hex[0], 16) >= 8) {
 		for (var i = 0; i < bits-hex.length; i++) {
-				temp += "F";
+				temp = temp + "F";
 		}
 	} else {
-		for (var i = 0; i < bites-hex.length; i++) {
-				temp += "0";
+		for (var i = 0; i < bits-hex.length; i++) {
+				temp = temp + "0";
 		}
 	}
 	temp += hex;
